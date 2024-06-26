@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        * {
+    margin: 0;
+    padding:  0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+   
+   }
+   
+   body {
+       font-family: "popping", sans-serif;
+       background-color: #1b1726;
+   }
+   
+   image {
+       max-width: 100%;
+   }
+   
+   .container {
+       max-width:1200px;
+       margin: 0 auto;
+   }
+   
+   .header {
+       background-image: url(images/bg.jpg) ;
+       background-position: center center;
+       background-repeat: no-repeat;
+       background-size: cover;
+       display: flex;
+       align-items: center;
+       min-height: 80vh;
+       padding:80px 0;
+   }
+    
+   .menu {
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+   }
+   
+   .logo {
+       color: #ff5a2c;
+       font-size: 25px;
+       font-weight: 800px;
+       text-transform: uppercase;
+   
+   }
+   
+   .menu .navbar ul li {
+       position: relative;
+       float: left;
+   
+   }
+   
+   .menu .navbar ul li a {
+       font-size: 18px;
+       padding: 20px;
+       color: #ffffff;
+       font-weight: 600;
+       display: block;
+   
+   }  
+   
+   .menu .navbar ul li a:hover {
+       color: #ff5a2c;
+   
+   }
+   
+   #menu {
+       display: none;
+   }
+   
+   .menu-icono {
+     width: 25px;
+   }
+   
+    .menu label {
+       cursor: pointer;
+       display: none;
+    }
+   
+   .header-content {
+     display: flex;
+   }
+   
+   .header-txt {
+       flex-basis: 50px;
+   }
+   
+   .header-txt h1 {
+       font-size: 60px;
+       color: #ffffff;
+       line-height: 1.3;
+       margin-bottom: 25px;
+   }
+   
+   .header-txt span {
+       color: #ff5a2c;
+   }
+   
+   .header-txt p {
+       font-size: 17px;
+       color: #e0e0e0; 
+       margin-bottom: 45px;
+   }
+   
+   .butons {
+       display: flex;
+   }
+   
+   .btn-1, .btn-2, .btn-3 {
+       display: inline-block;
+       padding: 11px 35px;
+       border: 2px solid #ff5a2c;
+       border-radius: 25px;
+       margin-right: 25px;
+       font-size: 17px;
+       color: #ffffff;
+   }
+   
+   .btn-1 :hover {
+       background-color: #ff5a2c;
+   }
+   
+   .popular {
+       padding: 100px 0;
+       text-align: center;
+   }
+   
+   h2 {
+    color: #ffffff;
+   font-size: 35px;
+   margin-bottom: 45px;
+   }
+   
+   .popular-content {
+       display: flex;
+       justify-content: space-between;
+   }
+   
+   .popular-content img {
+       width: 150px;
+   }
+   
+   
+   .product-content {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 50px;
+   }
+   
+   .product-1 {
+       background-color: #2a223a;
+   }
+   
+   .product-txt {
+       padding: 50px  30px; 
+   }
+   
+   h3 {
+       font-size: 20px;
+       color: #ffffff;
+       margin-bottom: 20px;
+   }
+   
+   .price {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+   }
+   
+   .price p {
+       font-size: 17px;
+       color: #ff5a2c;
+   }
+   
+    .btn-2 {
+       padding: 5px  25px;
+       background-color: #ff5a2c;
+       margin-right: 0; 
+    }
+   
+   .contact {
+       padding: 150px  300px;
+   }
+   
+   .contact-content {
+       background-color: #2a223a;
+       text-align: center;
+       padding: 49px;
+       border-radius: 49px;
+   }
+   
+   form {
+       display: flex;
+       justify-content: center;
+       margin-top: 20px;
+   }
+   
+   input {
+       padding: 18px  25px;
+       background-color: #2a223a;
+       border: 0;
+       border-radius: 25px;
+       outline: none;
+       margin-right: 11px;
+       color: #ffffff;
+       font-size: 17px;
+   }
+   
+   ::placeholder {
+       color: #e0e0e0;
+       font-size: 17px;
+   }
+   
+   .btn-3 {
+       background-color: #ff5a2c;
+       cursor: pointer;
+       margin-right: 0;
+   }
+   
+   .footer {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 49px 0;
+   }
+   
+   .link ul {
+       display: flex;
+   }
+   
+   .link ul li > a {
+       font-size: 17px ;
+       color: #ffffff;
+       margin-right: 21px;
+   }
+   
+   .link ul li > a :hover {
+       color: #ff5a2c;
+   }
+   
+   @media(max-width:991px) {
+    
+       .menu {
+           padding: 19px;
+       }
+   
+       .menu label {
+         display: initial;
+       }
+   
+     .menu .navbar {
+       position: absolute;
+       top: 100px;
+       left: 0;
+       right:0;
+       background-color: #ff5a2c;
+       display: none;
+     }
+   
+     .menu .navbar ul li a:hover {
+       color: #1b1726;
+     }
+   
+     .menu .navbar ul li {
+       width: 100%;
+     }
+   
+   #menu:checked ~ .navbar {
+       display: initial;
+   
+   }
+   
+   .header {
+       min-height: 0vh;
+       padding: 79px 30 50 30;
+       
+   }
+   
+   .header-txt {
+       text-align: center;
+       flex-basis: 100%;
+   }
+   
+   .header-txt h1 {
+       font-size: 50px;
+       margin-bottom: 15px;
+   }
+   
+   .butons {
+       justify-content: center;
+   }
+   
+   .btn-1:last-of-type {
+       margin-right: 0;
+   }
+   
+   .popular {
+       display: none;
+   }
+   
+   .product {
+       padding:30px;
+   }
+   
+    .product-content {
+       grid-template-columns: repeat(1,1fr);
+       gap: 25px;
+    }
+   
+    .product-1 img {
+        width: 99px;
+    }
+   
+    .contact {
+       padding:30px;
+    }
+   
+    form {
+       flex-basis: column;
+    }
+   
+    input {
+       margin: 0 0 20px 0  ;
+    }
+   
+    .footer {
+       flex-direction: column;
+       text-align: center;
+    }
+    
+   .link ul {
+       margin-top: 20px;
+   }
+   
+   
+   }
+
+ .intro  {
+    margin: 7px;
+    text-align: center;
+    background-color: #2cdfff ;
+
+ }
+
+ picture {
+    display: inline-block;
+    background-color: #d8c6c6;
+ }
+
+ picture img {
+    max-width: 200px;
+    mix-blend-mode: multiply;
+    filter: grayscale(100%);
+}
+style
+        table,th,td {
+        border: 1px sol solid black
+    }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos.Erlin.pro</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="menu container">
+            <img clase="logo" src="images/mi_logo-removebg-preview.png" width="60px">
+            <input type="checkbox" id="menu"/> 
+            <label for="menu">
+                <img src="images/menu.png" class="menu icono" alt="">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#Inicio">Inicio</a></li>
+                    <li><a href="#juegos">Juegos populares</a></li>
+                    <li><a href="#Videos">Videos</a></li>
+                    <li><a href="#Todos">Todos los juegos </a></li>
+                    <li><a href="#Links">Links</a></li>
+                    <li><a href="#Creador">Creador</a></li>
+                </ul>
+
+            </nav>
+        </div>
+         
+       <div class="header-content container" id="Inicio">
+        <div class="header-txt">
+            <h1>Obten tu <span>juego</span> <br> favorito aqui  </h1> 
+            <p>
+                compra tus mejores juegos que siempre has querido tener en tu consola de PlayStation,
+                 Xbox, Xbox 360 y otras consolas solo para ti!!
+            </p>
+            <div class="butons">
+                <a href="#" class="btn-1">Informacion</a>
+                <a href="#" class="btn-1">Juegos</a>
+            </div>
+        </div>
+
+       </div>
+
+    </header>
+    <section class="popular container" id="juegos">
+        
+        <h2>juegos populares</h2>
+        
+        <div class="popular-content">
+            <img src="images/g1.jpg" alt="">
+            <img src="images/g2.jpg" alt="">
+            <img src="images/g3.jpg" alt="">
+            <img src="images/g4.jpg" alt="">
+            <img src="images/g5.jpg" alt="">
+            <img src="images/g6.jpg" alt="">
+            <img src="images/g7.jpg" alt="">
+            <img src="images/mario.jpeg" alt="">
+        </div>
+    </section>
+
+    <section class="Videos container" id="Videos">
+        
+        <h2>Videos </h2>
+        
+        <div class="Videos-content">
+        <video src="videos/Grand Theft Auto V_ The Official Trailer.mp4" controls width="150px"></video>
+        <video src="videos/Official Reveal Trailer _ Call of Duty_ Ghosts.mp4" controls width="150px"  ></video>
+        <video src="videos/Best Moment From Battlefield 2042 Trailer (Rendezook Scene).mp4" controls width="150px"></video>
+        <video src="videos/Crash Team Racing Nitro-Fueled - Reveal Trailer _ PS4.mp4" controls width="150px"></video>
+        <video src="videos/Fortnite Battle Royale_ Trailer del juego.mp4" controls width="150px"></video>
+        <video src="videos/New Super Mario Bros. U Deluxe - Launch Trailer - Nintendo Switch.mp4" controls width="150px"></video>
+    </div>
+</section>
+
+
+<main class="product container" id="Todos">
+
+    <h2>Todos los juegos</h2>
+
+    <div class="product-content">
+
+        <div class="product-1">
+            <img src="images/l1.jpg" alt="">
+            <div class="product-txt">
+                <h3>Halo reach</h3>
+                <div class="price">
+                    <p>$35</p>
+                    <a href="#" class="btn-2">Obtener</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="product-1">
+            <img src="images/l2.jpg" alt="">
+            <div class="product-txt">
+                <h3>Music </h3>
+                <div class="price">
+                    <p>$15</p>
+                    <a href="#" class="btn-2">Obtener</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="product-1">
+            <img src="images/l3.jpg" alt="">
+            <div class="product-txt">
+                <h3>Clash royale</h3>
+                <div class="price">
+                    <p>$100</p>
+                    <a href="#" class="btn-2">Obtener</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="product-1">
+            <img src="images/l4.jpg" alt="">
+            <div class="product-txt">
+                <h3>mundo abierto</h3>
+                <div class="price">
+                    <p>$70</p>
+                    <a href="#" class="btn-2">Obtener</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="product-1">
+            <img src="images/l5.jpg" alt="">
+            <div class="product-txt">
+                <h3>Fortnite</h3>
+                <div class="price">
+                    <p>$90</p>
+                    <a href="#" class="btn-2">Obtener</a>
+
+                </div>
+
+            </div>
+
+        </div>
+     
+        <div class="product-1">
+            <img src="images/l6.jpg" alt="">
+            <div class="product-txt">
+                <h3>Guerra</h3>
+                <div class="price">
+                    <p>$20</p>
+                    <a href="#" class="btn-2">Obtener</a>
+
+                </div>
+
+            </div>
+
+        </div>
+      
+        <div class="product-1">
+            <img src="images/l7.jpg" alt="">
+            <div class="product-txt">
+                <h3>crash baticon </h3>
+                <div class="price">
+                    <p>$50</p>
+                    <a href="#" class="btn-2">Obtener</a>
+
+                </div>
+
+            </div>
+
+        </div>
+      
+        <div class="product-1">
+            <img src="images/l8.jpg" alt="">
+            <div class="product-txt">
+                <h3>GTA V</h3>
+                <div class="price">
+                    <p>$100</p>
+                    <a href="#" class="btn-2">Obtener</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="product-1">
+            <img src="images/l9.jpg" alt="">
+            <div class="product-txt">
+                <h3>Guerras</h3>
+                <div class="price">
+                    <p>$40</p>
+                    <a href="#" class="btn-2">Obtener</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="product-1">
+            <img src="images/descarga.jpeg" width="400px">
+            <div class="product-txt">
+                <h3>Mario Deluxe</h3>
+                <div class="price">
+                    <p>$70</p>
+                    <a href="#" class="btn-2">Obtener</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+</main>
+
+<section class="contact container">
+
+    <div class="contact-content">
+        <h3>Subscribete a nuestro blog</h3> 
+        <form>
+        <input type="email" placeholder="Escribe tu correo">
+        <input type="submit" class="btn-3" value="Enviar ">
+        </form> 
+    </div>
+
+</section>  
+ <br>
+       <center><img clase="logo" src="images/mi_logo-removebg-preview.png" width="200px"></center>
+    </div>
+</footer>
+
+<section class="intro">
+<H3>Enlaces</H3>
+<strong>
+<ul>
+<li><a href="https://www.rockstargames.com/gta-v">Enlace 1</a> <br></li>
+<li><a href="https://www.callofduty.com/es">Enlace 2</a> <br></li>
+<li><a href="https://www.fortnite.com/?lang=es-ES">Enlace 3</a> <br></li>
+<li><a href="https://www.ea.com/es-es/games/battlefield/battlefield-2042">Enlace 4</a> <br></li>
+<li><a href="https://www.nintendo.com/es-mx/store/products/new-super-mario-bros-u-deluxe-switch/">Enlace 5</a> <br></li>
+</ul>
+</strong>
+
+</section>
+<br>
+
+<center><section class="Creador" id="Creador" style="color:white">
+    </style>
+    <table>
+        <tr>
+            <th>Institucion</th> <br>
+            <td> Instituto nacional de antiguo cuscatlan</td>
+        </tr>
+
+        <tr>
+            <th>Nombre</th> <br>
+            <td> Erlin Caleb Henriquez Belloso</td>
+        </tr>
+
+        <tr>
+            <th>Especialidad</th> <br>
+            <td>Desarrollo de software</td>
+        </tr>
+
+        <tr>
+            <th>Edad </th> <br>
+            <td>16 Años de edad</td>
+        </tr>
+    </table> 
+</center>
+<br>
+
+
+<center> <picture><img src="images/a_yo-removebg-preview.png" alt=""><br>
+</section>
+</picture></center>
+
+ <audio controls autoplay>
+   <source src="cancion/Super Mario Bros. Theme Song.mp3" type="audio/mp3"> 
+ </audio>
+
+ <footer>
+    <p>
+       <center><h>Copyright Erlin Henriquez 2024</h></center> 
+    </p>
+ </footer>
+
+
+</body>
+</html>
